@@ -1,0 +1,98 @@
+section .data
+	message db "Enter any 5 Numbers: ", 10
+	msgLength equ $ -message
+	text db "The Numbers You've Entered are: ", 10
+	txtLength equ $ -text
+	
+	n1 Times 5 dq 0
+		
+section .bss
+	number1 resb 7
+	number2 resb 7
+	number3 resb 7
+	number4 resb 7
+	number5 resb 7
+
+
+section .text
+	global _start
+	_start:
+	
+	;display the message
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, message
+	mov rdx, msgLength
+	syscall
+	
+	mov rax, 0
+	mov rdi, 0
+	mov rsi, number1
+	mov rdx, 7
+	syscall
+	
+	mov rax, 0
+	mov rdi, 0
+	mov rsi, number2
+	mov rdx, 7
+	syscall
+	
+	mov rax, 0
+	mov rdi, 0
+	mov rsi, number3
+	mov rdx, 7
+	syscall
+	
+	mov rax, 0
+	mov rdi, 0
+	mov rsi, number4
+	mov rdx, 7
+	syscall
+	
+	mov rax, 0
+	mov rdi, 0
+	mov rsi, number5
+	mov rdx, 7
+	syscall
+	
+	;display the text
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, text
+	mov rdx, txtLength
+	syscall
+	
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, number1
+	mov rdx, 2
+	syscall
+	
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, number2
+	mov rdx, 7
+	syscall
+	
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, number3
+	mov rdx, 7
+	syscall
+	
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, number4
+	mov rdx, 7
+	syscall
+	
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, number5
+	mov rdx, 7
+	syscall
+	
+	
+	mov rax,60
+	mov rdi,0
+	syscall
