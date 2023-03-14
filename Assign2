@@ -1,0 +1,33 @@
+;Kaustubh Joshi
+;21233
+;Assignment no 02
+;Write an X86/64 ALP to accept a string and to display its length.
+section .data
+msg db "Hello" ,10,13
+leng equ $- msg
+section .bss
+length resb 8
+section .text
+global _start
+_start:
+
+;print Message
+mov eax,01
+mov di,01
+mov si,msg
+mov edx,leng                                
+syscall
+
+mov eax,0
+mov edi,0
+mov esi,message
+mov edx,10
+syscall
+
+
+;print Message
+mov eax,01
+mov di,01
+mov si,message
+mov edx,10                                    
+syscall
